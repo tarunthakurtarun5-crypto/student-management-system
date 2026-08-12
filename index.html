@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Student Management System</h1>
+      <p>Manage student records easily and efficiently</p>
+    </div>
+    <button id="addBtn" class="primary">+ Add Student</button>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <div class="card"><span>Total Students</span><strong id="totalStudents">0</strong></div>
+      <div class="card"><span>Average Marks</span><strong id="avgMarks">0%</strong></div>
+      <div class="card"><span>Present Today</span><strong id="presentCount">0</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <h2>Student Records</h2>
+        <input id="search" type="search" placeholder="Search by name, course or email...">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th><th>Email</th><th>Course</th><th>Marks</th>
+              <th>Attendance</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+        <p id="empty" class="empty">No student records found.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeBtn" class="close">×</button>
+      <h2 id="modalTitle">Add Student</h2>
+      <form id="studentForm">
+        <input type="hidden" id="studentId">
+        <label>Name<input id="name" required></label>
+        <label>Email<input id="email" type="email" required></label>
+        <label>Course<input id="course" required placeholder="BCA"></label>
+        <label>Marks (%)<input id="marks" type="number" min="0" max="100" required></label>
+        <label>Attendance (%)<input id="attendance" type="number" min="0" max="100" required></label>
+        <button class="primary" type="submit">Save Student</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
